@@ -28,7 +28,9 @@ O desafio corresponde em realizar o desenvolvimento de duas páginas, na primeir
 ## Solução
 
 Links importantes:
-  -Aplicação em produção: https://desafio-ailos.firebaseapp.com
-  -Projeto github: https://github.com/SamukaAlves000/desafio-ailos
+
+- Aplicação em produção: https://desafio-ailos.firebaseapp.com
+- Projeto github: https://github.com/SamukaAlves000/desafio-ailos
+- CPFs válidos para teste: 05994793107 e 02894633589
 
 
