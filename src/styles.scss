@@ -1,0 +1,51 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.color-10{
+  background-color: #013F5C;
+  color: #fafafa;
+}
+
+.color-01{
+  background-color: #fafafa;
+  color: #212121;
+}
+
+.mat-card-header {
+  height: 10%;
+}
+
+.inner {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.texto {
+  font-size: 29px;
+  font-family: Arial;
+  color: #000000;
+  text-align: justify;
+  line-height: 30px;
+}
+
+.subtitulo {
+  font-size: 36px;
+  font-family: Arial, Bold;
+  color: #000000;
+}
+
+.titulo {
+  font-size: 119px;
+  font-family: ABCDEE+Arial Black;
+  color: #000000;
+}
+
+
+
+
+
+
+
+

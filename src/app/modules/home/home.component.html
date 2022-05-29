@@ -1,0 +1,170 @@
+<mat-card style="height: 100%">
+  <mat-card-title>NOVA ADMISSÃO COOPERADO</mat-card-title>
+  <mat-card-subtitle>Cadastro/Admissão do Cooperado/Nova Admissão do Cooperado</mat-card-subtitle>
+  <mat-horizontal-stepper>
+    <mat-step [stepControl]="firstFormGroup">
+      <form [formGroup]="firstFormGroup">
+        <ng-template matStepLabel>Início</ng-template>
+        <h2>Informe o CPF do futuro cooperado (a)</h2>
+        <p>Se necessário, você poderá duplicar uma conta existente ou pausar e retornar este cadastro futuramente. <br/>
+          Digite apenas os números (sem pontos ou traços).</p>
+        <span>
+            <mat-form-field class="example-full-width">
+              <mat-label>CPF</mat-label>
+              <input matInput mask="000.000.000-00" placeholder="000.000.000-00" formControlName="cpf" required (ngModelChange)="reset()">
+              <mat-error *ngIf="!firstFormGroup.get('cpf').valid">CPF inválido!</mat-error>
+            </mat-form-field>
+            <button mat-raised-button style="margin-left: 25px" (click)="consultar()" [disabled]="!firstFormGroup.get('cpf').valid">Consular por CPF</button>
+        </span>
+        <br/>
+        <div *ngIf="isMostrarInfo">
+          <div fxLayout="row wrap" fxLayoutGap="16px grid">
+            <div fxFlex="33%" fxFlex.xs="100%" fxFlex.sm="33%">
+              <mat-card>
+                <mat-card-title>Situação cadastral do CPF</mat-card-title>
+                <mat-card-subtitle>Consulta na Receita Federal</mat-card-subtitle>
+                <mat-card-content>
+                  <table>
+                    <tr>
+                      <td rowspan="2" style="padding-right: 7px">
+                        <mat-icon>person</mat-icon>
+                      </td>
+                      <td>
+                        Nome
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>{{this.dadosTela.nome}}</th>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                  </table>
+                  <br>
+                  <table>
+                    <tr>
+                      <td rowspan="2" style="padding-right: 7px">
+                        <mat-icon style="color: green" *ngIf="dadosTela.situacao === 'Regular'">sentiment_very_satisfied</mat-icon>
+                        <mat-icon style="color: red" *ngIf="dadosTela.situacao === 'Irregular'">sentiment_very_dissatisfied</mat-icon>
+                      </td>
+                      <td>
+                        Situação do CPF
+                      </td>
+                    </tr>
+                    <tr style="text-align: left">
+                      <th>{{this.dadosTela.situacao}}</th>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                  </table>
+                </mat-card-content>
+              </mat-card>
+            </div>
+            <div fxFlex="33%" fxFlex.xs="100%" fxFlex.sm="33%">
+              <mat-card>
+                <mat-card-title>Conta aplicação</mat-card-title>
+                <mat-card-subtitle>Cooperativa Viacredi</mat-card-subtitle>
+                <mat-card-content>
+                  <table>
+                    <tr>
+                      <td rowspan="2" style="padding-right: 7px">
+                        <mat-icon>person</mat-icon>
+                      </td>
+                      <td>
+                        Número da conta
+                      </td>
+                    </tr>
+                    <tr>
+                      <th style="text-align: left">{{this.dadosTela.numeroContaAplicacao}}</th>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                  </table>
+                  <br>
+                  <br>
+                  <table>
+                    <tr>
+                      <th rowspan="2">
+                      <span>
+                        <a style="font-size: 13pt; color: #013F5C">Duplicar conta</a>
+                      </span>
+                      </th>
+                      <td>
+                      </td>
+                    </tr>
+                    <tr style="text-align: left">
+                      <th>
+                      </th>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                  </table>
+                </mat-card-content>
+              </mat-card>
+            </div>
+            <div fxFlex="33%" fxFlex.xs="100%" fxFlex.sm="33%">
+              <mat-card>
+                <mat-card-title>Conta corrente</mat-card-title>
+                <mat-card-subtitle>Cooperativa Viacredi</mat-card-subtitle>
+                <mat-card-content>
+                  <table>
+                    <tr>
+                      <td rowspan="2" style="padding-right: 7px">
+                        <mat-icon>person</mat-icon>
+                      </td>
+                      <td>
+                        Número da conta
+                      </td>
+                    </tr>
+                    <tr>
+                      <th style="text-align: left">{{this.dadosTela.numeroContaCorrente}}</th>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                  </table>
+                  <br>
+                  <br>
+                  <table>
+                    <tr>
+                      <th rowspan="2">
+                      <span>
+                        <a style="font-size: 13pt; color: #013F5C">Duplicar conta</a>
+                      </span>
+                      </th>
+                      <td>
+                      </td>
+                    </tr>
+                    <tr style="text-align: left">
+                      <th>
+                      </th>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                  </table>
+                </mat-card-content>
+              </mat-card>
+            </div>
+          </div>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step>
+      <ng-template matStepLabel>Documentos</ng-template>
+      Não implementado!
+      <br>
+      <span style="color: red; font-size: 18px">CPFs válidos para teste: 02894633589 e 05994793108</span>
+    </mat-step >
+    <mat-step>
+      <ng-template matStepLabel>Dados cadastrais</ng-template>
+      Não implementado!
+      <br>
+      <span style="color: red; font-size: 18px">CPFs válidos para teste: 02894633589 e 05994793108</span>
+    </mat-step>
+    <mat-step>
+      <ng-template matStepLabel>Admissão</ng-template>
+      Não implementado!
+      <br>
+      <span style="color: red; font-size: 18px">CPFs válidos para teste: 02894633589 e 05994793108</span>
+    </mat-step>
+  </mat-horizontal-stepper>
+</mat-card>
+
