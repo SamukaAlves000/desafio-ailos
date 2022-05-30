@@ -6,7 +6,7 @@ O desafio corresponde em realizar o desenvolvimento de duas páginas, na primeir
 
 
 <p align="center">
- <img src="https://i.ibb.co/qxF1MFr/Screenshot-1.jpg" width="700">
+ <img src="https://i.ibb.co/qxF1MFr/Screenshot-1.jpg" width="900">
 </p>
 
 
